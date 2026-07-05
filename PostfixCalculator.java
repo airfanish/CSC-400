@@ -13,6 +13,12 @@ public class PostfixCalculator {
 		// create an empty stack
 		Stack<Integer> numberStack = new Stack<>();
 
+		// Check for empty or null input
+		if (expression == null || expression.trim().isEmpty()) {
+    		System.out.println("Expression cannot be empty.");
+    		return 0;
+		}
+
 		// Split expression into tokens wherever there is a space
 		String[] tokens = expression.split(" ");
 
@@ -84,8 +90,8 @@ public class PostfixCalculator {
 
 				// invalid tokens
 				else {
-					System.out.println("Invalid postfix expression.");
-					return 0;
+    				System.out.println("Invalid token encountered: " + token);
+    				return 0;
 				}
 			}
 		}
